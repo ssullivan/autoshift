@@ -6,6 +6,12 @@
 
 WIP
 
+### Docker-Compose
+```sh
+docker secret create password_file /path/to/secret
+docker-compose up -d
+```
+
 ### Installation
 
 ```sh
