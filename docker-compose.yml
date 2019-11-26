@@ -1,0 +1,17 @@
+---
+version: "3.7"
+services:
+  autoshift:
+    build:
+      context: .
+    environment:
+      - SHIFT_USER=example
+      - SHIFT_PASS=/run/secrets/password_file
+      - SHIFT_GAMES=bl3
+      - SHIFT_PLATFORMS=epic
+    secrets:
+      - password_file
+secrets:
+  password_file:
+    external: true
+...

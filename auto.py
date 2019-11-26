@@ -111,6 +111,10 @@ def setup_argparser():
                         help=("Password for your login. "
                               "(optional. You will be prompted to enter your "
                               " credentials if you didn't specify them here)"))
+    parser.add_argument("-P", "--passfile",
+                        help=("Password for your login. "
+                              "(optional. You will be prompted to enter your "
+                              " credentials if you didn't specify them here)"))
     parser.add_argument("--golden",
                         action="store_true",
                         help="Only redeem golden keys")
@@ -208,6 +212,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     args.pw = getattr(args, "pass")
+    args.pw_file = getattr(args, "passfile")
+
+    if args.pw is None and args.pw_file is not None:
+      with open(args.pw_file, mode='r') as fh:
+        args.pw = fh.read()
 
     _L.setLevel(INFO)
     if args.verbose:

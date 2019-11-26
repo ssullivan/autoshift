@@ -10,4 +10,4 @@ RUN apk update && apk upgrade && \
     apk add --no-cache g++ gcc libxslt-dev && \
     pip install -r ./autoshift/requirements.txt && \
     mkdir ./autoshift/data
-CMD python ./autoshift/auto.py --user ${SHIFT_USER} --pass ${SHIFT_PASS} --games ${SHIFT_GAMES} --platforms ${SHIFT_PLATFORMS} ${SHIFT_ARGS}
+CMD python ./autoshift/auto.py --user ${SHIFT_USER} --P ${SHIFT_PASS} --games ${SHIFT_GAMES} --platforms ${SHIFT_PLATFORMS} ${SHIFT_ARGS}

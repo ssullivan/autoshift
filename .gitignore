@@ -122,3 +122,7 @@ keys.db
 
 # notebooks folder
 notebooks/
+
+# Intellij
+.idea
+*.iml
