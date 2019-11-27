@@ -146,7 +146,7 @@ class ShiftClient:
         """Save cookie for auto login"""
         with open(self.cookie_file, "wb") as f:
             for cookie in self.client.cookies:
-                if cookie.name == "si":
+                if cookie.name == "si" or cookie.name == "_session_id":
                     pickle.dump(self.client.cookies, f)
                     return True
         return False

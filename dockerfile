@@ -19,4 +19,4 @@ RUN apk add --no-cache --virtual .build-deps \
         pip install -r ./autoshift/requirements.txt  && \
         apk del .build-deps && \
         mkdir ./autoshift/data
-CMD python ./autoshift/auto.py --user ${SHIFT_USER} --P ${SHIFT_PASS} --games ${SHIFT_GAMES} --platforms ${SHIFT_PLATFORMS} ${SHIFT_ARGS}
+CMD python ./autoshift/auto.py --user ${SHIFT_USER} -P ${SHIFT_PASS} --games ${SHIFT_GAMES} --platforms ${SHIFT_PLATFORMS} ${SHIFT_ARGS}

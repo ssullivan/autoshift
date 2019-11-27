@@ -126,3 +126,7 @@ notebooks/
 # Intellij
 .idea
 *.iml
+data/.cookies.save
+data/keys.db
+data
+data/*O

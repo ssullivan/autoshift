@@ -2,16 +2,17 @@
 version: "3.7"
 services:
   autoshift:
-    build:
-      context: .
+    image: autoshift:latest
     environment:
-      - SHIFT_USER=example
-      - SHIFT_PASS=/run/secrets/password_file
+      - SHIFT_USER=foo
+      - SHIFT_PASS=/run/secrets/gearbox_password
       - SHIFT_GAMES=bl3
       - SHIFT_PLATFORMS=epic
     secrets:
-      - password_file
+      - gearbox_password
+    deploy:
+      replicas: 1
 secrets:
-  password_file:
+  gearbox_password:
     external: true
 ...

@@ -216,7 +216,7 @@ if __name__ == "__main__":
 
     if args.pw is None and args.pw_file is not None:
       with open(args.pw_file, mode='r') as fh:
-        args.pw = fh.read()
+        args.pw = fh.read().rstrip()
 
     _L.setLevel(INFO)
     if args.verbose:
